@@ -23,19 +23,9 @@ If you have an interesting bug that you can reproduce, feel free to submit a pul
     - [2.3.2 Reproducing the Resource Overhead](#232-reproducing-the-resource-overhead)
 - [3. Licenses and Terms](#3-licenses-and-terms)
 
-## 0. Downloading the Repository
+## 0. Downloading the Repository (macOS instructions)
 
-### For Ubuntu (Original)
-
-Use the following command to download the artifact repository:
-
-```bash
-git clone --recursive https://github.com/efeslab/debugging-brave-new-world
-```
-
-### For macOS (with compatibility fixes)
-
-If you're using macOS, use this fork which includes fixes for Clang compatibility and Surfer waveform viewer support:
+If you're using macOS on an M-series Mac, use this fork (the original artifact contains Ubuntu-specific instructions):
 
 ```bash
 git clone --recursive https://github.com/ngernest/debugging-brave-new-world
@@ -46,29 +36,6 @@ git submodule update --init --recursive
 **Note**: The macOS fork includes:
 - Fixes for C++ ambiguous function call errors with Clang
 - Updated `make wave` targets to use Surfer instead of GTKWave
-- .dSYM files added to .gitignore
-
-The `hardware-bugbase` submodule points to [ngernest/hardware-bugbase](https://github.com/ngernest/hardware-bugbase) on the `macos-fixes` branch.
-
-#### Updating the hardware-bugbase submodule
-
-If new commits are pushed to the [hardware-bugbase fork](https://github.com/ngernest/hardware-bugbase), you can update your local copy:
-
-```bash
-# Option 1: Update from parent directory
-git submodule update --remote hardware-bugbase
-git add hardware-bugbase
-git commit -m "Update hardware-bugbase submodule"
-git push origin master
-
-# Option 2: Update from within submodule
-cd hardware-bugbase
-git pull origin macos-fixes
-cd ..
-git add hardware-bugbase
-git commit -m "Update hardware-bugbase submodule"
-git push origin master
-```
 
 After this command, you are expected to see the following directory hierarchy:
 
@@ -110,6 +77,17 @@ debugging-brave-new-world
     ├── recording
     ├── utils
     └── verilator
+```
+
+#### Updating the `hardware-bugbase` submodule
+
+The `hardware-bugbase` submodule points to [ngernest/hardware-bugbase](https://github.com/ngernest/hardware-bugbase) on the `macos-fixes` branch. If new commits are pushed to the [hardware-bugbase fork](https://github.com/ngernest/hardware-bugbase), you can update your local copy as follows:
+
+```bash
+git submodule update --remote hardware-bugbase
+git add hardware-bugbase
+git commit -m "Update hardware-bugbase submodule"
+git push origin master
 ```
 
 ## 1. Reproducible Bugs
