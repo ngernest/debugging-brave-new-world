@@ -1,6 +1,7 @@
 [submodule "hardware-bugbase"]
 	path = hardware-bugbase
-	url = https://github.com/efeslab/hardware-bugbase
+	url = https://github.com/ngernest/hardware-bugbase
+	branch = macos-fixes
 
 [submodule "veripass"]
 	path = veripass
