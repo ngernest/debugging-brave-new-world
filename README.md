@@ -28,13 +28,13 @@ If you have an interesting bug that you can reproduce, feel free to submit a pul
 Use the following command to download the artifact repository:
 
 ```bash
-git clone --recursive https://github.com/efeslab/asplos22-hardware-debugging-artifact
+git clone --recursive https://github.com/efeslab/debugging-brave-new-world
 ```
 
 After this command, you are expected to see the following directory hierarchy:
 
 ```bash
-asplos22-hardware-debugging-artifact
+debugging-brave-new-world
 ├── hardware-bugbase
 │   ├── c1-dead-lock-sdspi
 │   ├── c2-producer-consumer-mismatch-optimus
@@ -81,7 +81,7 @@ The `hardware-bugbase` directory contains all the reproducible bugs. Each bug is
 
 You will need to install and compile `Verilator` to reproduce these bugs. `Verilator` is located under the `veripass` directory.
 
-Before compilation, you will need to install a few dependencies:
+Before compilation, you will need to install a few dependencies:             
 (Note: the following has been tested on an M3 Mac)
 
 ```bash
@@ -91,7 +91,7 @@ brew install perl python3 make autoconf gcc flex bison ccache gperftools numactl
 Then compile `Verilator`:
 
 ```bash
-cd asplos22-hardware-debugging-artifact/veripass/verilator
+cd debugging-brave-new-world/veripass/verilator
 autoconf
 ./configure
 make -j8
@@ -106,7 +106,7 @@ Bugs are listed in the table below. You may `cd` into the directory of each bug 
 To reproduce a specific bug:
 
 ```bash
-cd asplos22-hardware-debugging-artifact/hardware-bugbase/<bug-dir>
+cd debugging-brave-new-world/hardware-bugbase/<bug-dir>
 make -j8 # compile the verilog code for simulation
 make sim  # run the simulation
 make wave # open the generated waveform with GTKWave
@@ -148,7 +148,7 @@ Our debugging tools locate in the `veripass` directory. In the `hardware-bugbase
 To run the debugging tools, you will need to compile `Verilator` and `Pyverilog` if you have not done so already:
 
 ```bash
-cd asplos22-hardware-debugging-artifact/veripass
+cd debugging-brave-new-world/veripass
 make -j8
 ```
 
