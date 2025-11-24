@@ -25,11 +25,28 @@ If you have an interesting bug that you can reproduce, feel free to submit a pul
 
 ## 0. Downloading the Repository
 
+### For Ubuntu (Original)
+
 Use the following command to download the artifact repository:
 
 ```bash
 git clone --recursive https://github.com/efeslab/debugging-brave-new-world
 ```
+
+### For macOS (with compatibility fixes)
+
+If you're using macOS, use this fork which includes fixes for Clang compatibility and Surfer waveform viewer support:
+
+```bash
+git clone --recursive https://github.com/ngernest/debugging-brave-new-world
+cd debugging-brave-new-world
+git submodule update --init --recursive
+```
+
+**Note**: The macOS fork includes:
+- Fixes for C++ ambiguous function call errors with Clang
+- Updated `make wave` targets to use Surfer instead of GTKWave
+- .dSYM files added to .gitignore
 
 After this command, you are expected to see the following directory hierarchy:
 
