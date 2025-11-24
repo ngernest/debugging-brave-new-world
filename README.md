@@ -48,6 +48,28 @@ git submodule update --init --recursive
 - Updated `make wave` targets to use Surfer instead of GTKWave
 - .dSYM files added to .gitignore
 
+The `hardware-bugbase` submodule points to [ngernest/hardware-bugbase](https://github.com/ngernest/hardware-bugbase) on the `macos-fixes` branch.
+
+#### Updating the hardware-bugbase submodule
+
+If new commits are pushed to the [hardware-bugbase fork](https://github.com/ngernest/hardware-bugbase), you can update your local copy:
+
+```bash
+# Option 1: Update from parent directory
+git submodule update --remote hardware-bugbase
+git add hardware-bugbase
+git commit -m "Update hardware-bugbase submodule"
+git push origin master
+
+# Option 2: Update from within submodule
+cd hardware-bugbase
+git pull origin macos-fixes
+cd ..
+git add hardware-bugbase
+git commit -m "Update hardware-bugbase submodule"
+git push origin master
+```
+
 After this command, you are expected to see the following directory hierarchy:
 
 ```bash
