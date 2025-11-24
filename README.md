@@ -102,7 +102,7 @@ Before compilation, you will need to install a few dependencies:
 (Note: the following has been tested on an M3 Mac)
 
 ```bash
-brew install perl python3 make autoconf gcc flex bison ccache gperftools numactl autoconf
+brew install perl python3 make autoconf gcc flex bison ccache gperftools numactl autoconf surfer
 ```
 
 Then compile `Verilator`:
