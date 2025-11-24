@@ -79,15 +79,13 @@ The `hardware-bugbase` directory contains all the reproducible bugs. Each bug is
 
 ### 1.1 Installation
 
-You will need to install compile `Verilator` to reproduce these bugs. `Verilator` is located under the `veripass` directory.
+You will need to install and compile `Verilator` to reproduce these bugs. `Verilator` is located under the `veripass` directory.
 
 Before compilation, you will need to install a few dependencies:
+(Note: the following has been tested on an M3 Mac)
 
 ```bash
-sudo apt-get install perl python3 make autoconf g++ flex bison ccache
-sudo apt-get install libgoogle-perftools-dev numactl perl-doc
-sudo apt-get install libfl2 libfl-dev  # Ubuntu only (ignore if gives error)
-sudo apt-get install zlibc zlib1g zlib1g-dev  # Ubuntu only (ignore if gives error)
+brew install perl python3 make autoconf gcc flex bison ccache gperftools numactl autoconf
 ```
 
 Then compile `Verilator`:
